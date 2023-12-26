@@ -4,8 +4,11 @@ const CardsList = ({ cards, handleDelete }) => {
             {cards.map((card) => (
                 <div className="cards" key={card.id}>
                     <h4>{card.front}</h4>
-                    <button className="delete-button" onClick={() => handleDelete(card.id)}>delete</button>
-                    <button className="edit-button" >update</button>
+                    <div className="button-container">
+                        <button className="delete-button" onClick={() => handleDelete(card.id)}>delete</button>
+                        <button className="edit-button" >update</button>
+                    </div>
+                    
                 </div>
             ))}
         </div>

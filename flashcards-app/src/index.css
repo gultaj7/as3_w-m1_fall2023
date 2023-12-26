@@ -52,8 +52,9 @@
 }
 
 button {
-  margin: 10px 0 0 0;
+  margin: 10px 3px 0 3px;
   border: 1px solid #d4d4d4;
+
 }
 
 .delete-button, .edit-button {
@@ -65,4 +66,7 @@ button {
 }
 .cards:hover .edit-button {
   display: block;
+}
+.button-container {
+  display: flex;
 }
