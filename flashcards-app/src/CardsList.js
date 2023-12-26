@@ -1,15 +1,15 @@
-const CardsList = (props) => {
-    const cards = props.cards;
+const CardsList = ({ cards, handleDelete }) => {
     return ( 
         <div className="card-list">
-            {cards.map((card)=> (
+            {cards.map((card) => (
                 <div className="cards" key={card.id}>
-                    <h4>{ card.word }</h4>
-                    <p>{ card.language }</p>
+                    <h4>{card.front}</h4>
+                    <button className="delete-button" onClick={() => handleDelete(card.id)}>delete</button>
+                    <button className="edit-button" >update</button>
                 </div>
             ))}
         </div>
-     );
+    );
 }
- 
+
 export default CardsList;

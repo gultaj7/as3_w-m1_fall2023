@@ -3,15 +3,20 @@ import CardsList from "./CardsList";
 
 const Home = () => {
     const [cards, setCards] = useState([
-        { language: 'french', word: 'yes', translation: 'oui', id: 1 },
-        { language: 'french', word: 'no', translation: 'non', id: 2 },
-        { language: 'french', word: 'speak', translation: 'parle', id: 3 },
-        { language: 'french', word: 'eat', translation: 'mange', id: 4 }
+        { front: 'yes', back: 'oui', id: 1 },
+        { front: 'no', back: 'non', id: 2 },
+        { front: 'speak', back: 'parle', id: 3 },
+        { front: 'eat', back: 'mange', id: 4 }
     ])
+
+    const handleDelete = (id) => {
+        const newCards = cards.filter(card => card.id !== id);
+        setCards(newCards);
+    }
     
     return (
         <div className="Home">
-           <CardsList cards={ cards }/>
+           <CardsList cards={ cards } handleDelete={handleDelete}/>
         </div>
     );
 }
