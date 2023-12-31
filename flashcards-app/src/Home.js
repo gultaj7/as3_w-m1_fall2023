@@ -6,7 +6,8 @@ const Home = () => {
         { front: 'yes', back: 'oui', id: 1 },
         { front: 'no', back: 'non', id: 2 },
         { front: 'speak', back: 'parle', id: 3 },
-        { front: 'eat', back: 'mange', id: 4 }
+        { front: 'eat', back: 'mange', id: 4 },
+        { front: "I'm eating a pizza", back: 'Je mange une pizza', id: 5 }
     ])
 
     const handleDelete = (id) => {
