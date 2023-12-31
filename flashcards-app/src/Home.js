@@ -1,23 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CardsList from "./CardsList";
 
 const Home = () => {
-    const [cards, setCards] = useState([
-        { front: 'yes', back: 'oui', id: 1 },
-        { front: 'no', back: 'non', id: 2 },
-        { front: 'speak', back: 'parle', id: 3 },
-        { front: 'eat', back: 'mange', id: 4 },
-        { front: "I'm eating a pizza", back: 'Je mange une pizza', id: 5 }
-    ])
+    const [cards, setCards] = useState(null)
 
     const handleDelete = (id) => {
         const newCards = cards.filter(card => card.id !== id);
         setCards(newCards);
     }
+
+    useEffect(() => {
+        fetch("http://localhost:8000/cards") //returns promise
+            .then(res=> {
+                return res.json() //another promise
+            })
+            .then(data=> {
+                setCards(data);
+            })
+    }, []);
     
     return (
         <div className="Home">
-           <CardsList cards={ cards } handleDelete={handleDelete}/>
+           {cards && <CardsList cards={ cards } handleDelete={handleDelete}/>}
         </div>
     );
 }
