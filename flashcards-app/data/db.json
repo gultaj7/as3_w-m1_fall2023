@@ -1,10 +1,30 @@
 {
-    "cards": [
-      { "front": "yes", "back": "oui", "id": 1 },
-      { "front": "no", "back": "non", "id": 2 },
-      { "front": "speak", "back": "parle", "id": 3 },
-      { "front": "eat", "back": "mange", "id": 4 },
-      { "front": "I'm eating a pizza", "back": "Je mange une pizza", "id": 5 }
-    ]
-  }
-  
+  "cards": [
+    { "front": "yes", "back": "oui", "id": 1 },
+    { "front": "no", "back": "non", "id": 2 },
+    { "front": "speak", "back": "parle", "id": 3 },
+    { "front": "eat", "back": "mange", "id": 4 },
+    { "front": "I'm eating a pizza", 
+      "back": "Je mange une pizza", 
+      "id": 5 },
+    { "front": "I'm eating a pizza", 
+      "back": "Je mange une pizza", 
+      "id": 6 },
+    { "front": "I'm eating a pizza", 
+      "back": "Je mange une pizza", 
+      "id": 7 },
+    { "front": "I'm eating a pizza", 
+      "back": "Je mange une pizza", 
+      "id": 8 },
+    { "front": "I'm eating a pizza", 
+      "back": "Je mange une pizza", 
+      "id": 9 },
+    { "front": "I'm eating a pizza", 
+      "back": "Je mange une pizza", 
+      "id": 10 },
+    { "front": "It's hard to believe, but currently, I speak French because I study and practice a lot.", 
+      "back": "C'est difficile à croire, mais actuellement, je parle en français parce que j'étudie et pratique beaucoup.", 
+      "id": 11 }
+
+  ]
+}

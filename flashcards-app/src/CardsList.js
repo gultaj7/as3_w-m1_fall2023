@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Card from './Card';
 
 //this component renders list of cards using map function
@@ -5,15 +6,28 @@ import Card from './Card';
 //'card' is an element generated as a result of map iteration
 
 const CardsList = ({ cards, handleDelete, showBack }) => {
-    return ( 
-        <div className="card-list">
-            {cards.map((card) => (
-                <div className="cards">
-                    <Card key={card.id} id={card.id} front={card.front} back={card.back} handleDelete={handleDelete} />
-                </div>
-            ))}
-        </div>
+    const [isAnyCardFlipped, setIsAnyCardFlipped] = useState(false);
+  
+    const handleCardFlip = (flipped) => {
+      setIsAnyCardFlipped(flipped);
+    };
+  
+    return (
+      <div className={`card-list ${isAnyCardFlipped ? 'flipped' : ''}`}>
+        {cards.map((card) => (
+          <div className="cards">
+            <Card
+              key={card.id}
+              id={card.id}
+              front={card.front}
+              back={card.back}
+              handleDelete={handleDelete}
+              onFlip={handleCardFlip}
+            />
+          </div>
+        ))}
+      </div>
     );
-}
-
-export default CardsList;
+  };
+  
+  export default CardsList;

@@ -8,13 +8,23 @@ const Card = ({ id, front, back, handleDelete }) => {
     };
 
     return (
-        <div className="card" key={id} onClick={ handleFlip }>
-          <h4>{ isFlipped ? back : front }</h4>
-          <div className="button-container">
-            <button className="delete-button" onClick={() => handleDelete(id)}>delete</button>
-            <button className="edit-button">update</button>
+      <div className={`card ${isFlipped ? 'flipped' : ''}`} key={id} onClick={handleFlip}>
+        <div className="card-content">
+          <div className={`front ${isFlipped ? 'hidden' : ''}`}>
+            <h4>{front}</h4>
           </div>
+          <div className={`back ${isFlipped ? '' : 'hidden'}`}>
+            <h4>{back}</h4>
+          </div>
+        
+        <div className="button-container">
+          <button className="delete-button" onClick={() => handleDelete(id)}>
+            delete
+          </button>
+          <button className="edit-button">update</button>
         </div>
+        </div>
+      </div>
       );
     };
     
