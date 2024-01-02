@@ -13,9 +13,9 @@ const Home = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            fetch("http://localhost:8001/cards") //returns promise
-                .then(res=> {
-                    if(res.ok) {
+            fetch("http://localhost:8000/cards") //returns promise
+                .then(res => {
+                    if(!res.ok) {
                         throw Error('failed to fetch the data')
                     }
                     return res.json() //another promise
