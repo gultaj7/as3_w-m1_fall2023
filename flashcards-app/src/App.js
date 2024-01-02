@@ -1,15 +1,23 @@
-import Navbar from './Navbar';
-import Home from './Home';
 
-function App() {
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import FlashCards from './FlashCards';
+import Contact from './Contact';
+import Navbar from './Navbar';
+
+const App = () => {
   return (
-    <div className="app">
-      <Navbar />
-      <div className="content">
-        <Home />
+    <Router>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/flash-cards" element={ <FlashCards /> } />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
-}
+};
 
 export default App;
