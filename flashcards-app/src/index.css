@@ -68,7 +68,7 @@
 .card {
   perspective: 1000px;
   transform-style: preserve-3d;
-  transition: transform 0.3s, background-color 0.3s;
+  transition: transform 0.4s, background-color 0.4s;
   cursor: pointer;
   text-align: center;
 }
@@ -87,7 +87,7 @@
 
 .back {
   /* background-color: #00690012; */
-  background-color: #e2d1f96f;
+  background-color: #e8dafb6f;
   /* background-color: #e7e8d175; */
   padding: 0%;
 }
