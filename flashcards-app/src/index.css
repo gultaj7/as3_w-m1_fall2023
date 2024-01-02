@@ -2,6 +2,8 @@
   margin: 0;
 }
 
+/*colors: navbar bcg, navbar a color, cards bcg, back bgc
+
 /* Navbar styling */
 .navbar {
   padding: 40px;
@@ -11,7 +13,9 @@
   margin: 0 auto;
   border-bottom: 2px solid #f2f2f2;
   font-size: large;
-  background-color: #013220ef;
+  background-color: #317773;
+  /* background-color: #013220ef; */
+  /* background-color: #B85042; */
 
 }
 
@@ -52,7 +56,7 @@
   word-wrap: break-word;
   /* padding: 16px 16px; */
   transition: box-shadow 0.3s;
-  background-color: beige;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .cards:hover {
@@ -82,7 +86,9 @@
 }
 
 .back {
-  background-color: #00690028;
+  /* background-color: #00690012; */
+  background-color: #e2d1f96f;
+  /* background-color: #e7e8d175; */
   padding: 0%;
 }
 
