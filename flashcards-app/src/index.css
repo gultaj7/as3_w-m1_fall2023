@@ -30,9 +30,9 @@
   color: white;
 }
 
-.navbar a:hover {
-  /* color: #f1356d; */
-}
+/* .navbar a:hover {
+  color: #f1356d;
+} */
 
 /* Content styling */
 .content {
@@ -133,3 +133,7 @@ button {
   display: block;
 }
 
+.pop-up-messages {
+  letter-spacing: 2px;
+  color: rgb(45, 45, 45);
+}
