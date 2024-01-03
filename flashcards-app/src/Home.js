@@ -39,9 +39,9 @@ const Home = () => {
       <div>
         <h2 className="header">Activity</h2>
 
-        <div className="card-list">
+        <div className="home-card-list">
           {projects.map((project, index) => (
-            <div className="card" key={index}>
+            <div className="home-card" key={index}>
               <h3 className="project-title">{project.title}</h3>
               <img
                 src={project.imageUrl}
