@@ -7,9 +7,17 @@ const FlashCards = () => {
     const [error, setError] = useState(null);
 
     const handleDelete = (id) => {
-        const newCards = cards.filter(card => card.id !== id);
-        setCards(newCards);
-    }
+        fetch(`http://localhost:8000/cards/${id}`, {
+          method: 'DELETE'
+        })
+        .then(() => {
+          const newCards = cards.filter(card => card.id !== id);
+          setCards(newCards);
+        })
+        .catch(error => console.error('Error deleting card:', error));
+      };
+      
+      
 
     useEffect(() => {
         setTimeout(() => {
