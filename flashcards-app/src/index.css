@@ -204,7 +204,7 @@ button {
 .contact-header {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #317773; /* Adjust the color based on your preference */
+  color: #317773; 
 }
 
 .contact-form {
@@ -221,12 +221,12 @@ button {
 
 .submit-button {
   padding: 10px;
-  background-color: #317773; /* Adjust the color based on your preference */
+  background-color: #317773; 
   color: white;
   border: none;
   cursor: pointer;
 }
 
 .submit-button:hover {
-  background-color: #013220; /* Adjust the color based on your preference */
+  background-color: #013220; 
 }
