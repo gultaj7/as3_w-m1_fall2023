@@ -5,6 +5,8 @@ const FlashCards = () => {
     const [cards, setCards] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
+
 
     const handleDelete = (id) => {
         fetch(`http://localhost:8000/cards/${id}`, {
@@ -48,7 +50,7 @@ const FlashCards = () => {
                     { isPending && <div>Loading...</div> }
                 </div>
                 
-                { cards && <CardsList cards={ cards } handleDelete={handleDelete}/>}
+                {cards && <CardsList cards={cards} handleDelete={handleDelete} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />}
             </div>
         </div>
         

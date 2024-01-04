@@ -5,7 +5,7 @@ import Card from './Card';
 //'cards' array of card objects 
 //'card' is an element generated as a result of map iteration
 
-const CardsList = ({ cards, handleDelete, showBack }) => {
+const CardsList = ({ cards, handleDelete, searchTerm, setSearchTerm }) => {
     const [isAnyCardFlipped, setIsAnyCardFlipped] = useState(false);
     const [front, setFront] = useState('');
     const [back, setBack] = useState('');
