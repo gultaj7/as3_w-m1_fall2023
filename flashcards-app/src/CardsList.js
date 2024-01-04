@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import Card from './Card';
+import Search from './Search';
 
 //this component renders list of cards using map function
 //'cards' array of card objects 
 //'card' is an element generated as a result of map iteration
 
-const CardsList = ({ cards, handleDelete, searchTerm, setSearchTerm }) => {
+const CardsList = ({ cards, handleDelete }) => {
     const [isAnyCardFlipped, setIsAnyCardFlipped] = useState(false);
     const [front, setFront] = useState('');
     const [back, setBack] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
   
     const handleCardFlip = (flipped) => {
       setIsAnyCardFlipped(flipped);
@@ -29,7 +31,6 @@ const CardsList = ({ cards, handleDelete, searchTerm, setSearchTerm }) => {
       });
     };
     
-    
   
     return (
       <div>
@@ -40,38 +41,45 @@ const CardsList = ({ cards, handleDelete, searchTerm, setSearchTerm }) => {
             <input 
               type="text"
               required
-              value = { front }
+              value={front}
               onChange={(e) => setFront(e.target.value)}
             />
             <label>back</label>
             <input 
               type="text"
               required
-              value = { back }
+              value={back}
               onChange={(e) => setBack(e.target.value)}
             />
             <button>create card</button>
           </form>
-          
         </div>
+        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <div className={`card-list ${isAnyCardFlipped ? 'flipped' : ''}`}>
-        {cards.slice().reverse().map((card) => (
-          <div key={card.id} className="cards">
-            <Card
-              key={card.id}
-              id={card.id}
-              front={card.front}
-              lastModified={card.lastModified}
-              back={card.back}
-              handleDelete={handleDelete}
-              onFlip={handleCardFlip}
-            />
-          </div>
-        ))}
+          {cards
+            .slice()
+            .reverse()
+            .filter((card) =>
+              card.front.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              card.back.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+            .map((card) => (
+              <div key={card.id} className="cards">
+                <Card
+                  key={card.id}
+                  id={card.id}
+                  front={card.front}
+                  lastModified={card.lastModified}
+                  back={card.back}
+                  handleDelete={handleDelete}
+                  onFlip={handleCardFlip}
+                />
+              </div>
+            ))}
         </div>
       </div>
-      
     );
-  };
-  
+    
+   }    
+    
   export default CardsList;
